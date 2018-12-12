@@ -17,11 +17,15 @@ https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
 ## Commands 
 ### Website commands
 >/setwebsite | Change the website URL
--> servertools.setwebsite
-/togglewebsite | Toggle the /website command
--> servertools.togglewebsite
-/website | Shows the website
--> No permission
+
+>-> servertools.setwebsite
+>/togglewebsite | Toggle the /website command
+
+>-> servertools.togglewebsite
+
+>/website | Shows the website
+
+>-> No permission
 
 ### Forum Commands
 /setforum | Change the forum URL
