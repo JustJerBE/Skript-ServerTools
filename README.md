@@ -15,27 +15,44 @@ https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
 
 
 ## Commands 
-### Website commands
->/setwebsite | Change the website URL
+### Website Commands
+/setwebsite | Change the website URL
 
->-> servertools.setwebsite
->/togglewebsite | Toggle the /website command
+-> servertools.setwebsite
 
->-> servertools.togglewebsite
+/togglewebsite | Toggle the /website command
 
->/website | Shows the website
+-> servertools.togglewebsite
 
->-> No permission
+/website | Shows the website
+
+-> No permission
 
 ### Forum Commands
 /setforum | Change the forum URL
+
 -> servertools.setforum
+
 /toggleforum | Toggle the /forum command
+
 -> servertools.toggleforum
+
 /forum | Shows the forum
+
 -> No permission
 
-This command is the command to toggle the messages when someone executes a command.
+### Warp Commands
+/setwarp | Set a warp
+
+-> servertools.setwarp
+
+/warp | Teleport to a warp
+
+-> servertools.warp.<warpname>
+  
+/warps | Shows the list of warps
+
+-> No permissions
 
 
 ## Servers using this plugin
