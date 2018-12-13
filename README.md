@@ -81,4 +81,4 @@ Right now? Nobody did react with their server IP, so be the first one!
 
 
 ## Versions
-[BETA 0.5](https://github.com/JustJerBE/Skript-ServerTools/tree/V1.0)
+[BETA 0.5](https://github.com/JustJerBE/Skript-ServerTools/tree/BETA-0.5)
