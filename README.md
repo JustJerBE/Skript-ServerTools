@@ -10,7 +10,9 @@ Right now is the plugin in BETA, so it isn't done yet!
 
 ## Needed plugins
 https://github.com/SkriptLang/Skript/releases
+
 https://github.com/Sitieno14/Unofficial-WildSkript/releases
+
 https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
 
 
@@ -56,15 +58,21 @@ https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
 
 ### Main Command
 /st | Main command
+
 -> servertools.st.use
 
 
 ## Commands to be added
 /setspawn | To set the spawn
+
 /spawn | To teleport to the spawn
+
 /sethome | To set a home
+
 /home | To teleport to a home
+
 /tpa | To send a teleportation request to a player
+
 /tpaccept | To accept an teleport request
 
 
