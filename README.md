@@ -54,12 +54,23 @@ https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
 
 -> No permissions
 
+### Main Command
+/st | Main command
+-> servertools.st.use
+
+
+## Commands to be added
+/setspawn | To set the spawn
+/spawn | To teleport to the spawn
+/sethome | To set a home
+/home | To teleport to a home
+/tpa | To send a teleportation request to a player
+/tpaccept | To accept an teleport request
+
 
 ## Servers using this plugin
-Right now, no one told me that his/her server is using this!
-
-Send my your server IP and I will check if you use it, and then your server IP can be listed here!
+Right now? Nobody did react with their server IP, so be the first one!
 
 
 ## Versions
-[V1.0](https://github.com/JustJerBE/Skript-CommandWatcher/tree/V1.0)
+[V1.0](https://github.com/JustJerBE/Skript-ServerTools/tree/V1.0)
