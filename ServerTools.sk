@@ -1,0 +1,156 @@
+options:
+    version: 1.0
+
+on load:
+    if {servertools.website} is not set:
+        set {servertools.website} to false
+    if {servertools.forum} is not set:
+        set {servertools.forum} to false
+    if {website} is not set:
+        set {website} to "www.google.com"
+    if {forum} is not set:
+        set {forum} to "www.google.com"
+    send "&3[&6ServerTools&3] &9Plugin succesfully loaded!" to console
+
+on join:
+    if player has permission "servertools.update.notify":
+        if text from "https://pastebin.com/raw/UHBzAqHn" is not "{@version}":
+            send "&3[&bServerTools&3] &aThere is an update available!"
+        else:
+            send "&3[&bServerTools&3] &aThere is no update available."
+
+command /setwebsite [<text>]:
+    trigger:
+        if player has permission "servertools.setwebsite":
+            if arg-1 is set:
+                set {website} to arg-1
+                wait 1 ticks
+                send "&3[&bServerTools&3] &3Website changed to: &b%{website}%"
+            else:
+                send "&3[&bServerTools&3] &3Usage: &b/setwebsite <Website>"
+        else:
+            send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+
+command /togglewebsite:
+    trigger:
+        if player has permission "servertools.togglewebsite":
+            if {servertools.website} is false:
+                set {servertools.website} to true
+                send "&3[&bServerTools&3] &3Website: &aEnabled"
+            else:
+                set {servertools.website} to false
+                send "&3[&bServerTools&3] &3Website: &cDisabled"
+        else:
+            send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+
+command /website:
+    trigger:
+        if {servertools.website} is true:
+            send "&3[&bServerTools&3] &3Go checkout our website!"
+            send "&3Link: &b%{website}%"
+        else:
+            send "&3[&bServerTools&3] &cSorry, we do not have a website!"
+
+command /setforum [<text>]:
+    trigger:
+        if player has permission "servertools.setforum":
+            if arg-1 is set:
+                set {forum} to arg-1
+                wait 1 ticks
+                send "&3[&bServerTools&3] &3Forum changed to: &b%{forum}%"
+            else:
+                send "&3[&bServerTools&3] &3Usage: &b/setforum <Forum>"
+        else:
+            send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+
+command /toggleforum:
+    trigger:
+        if player has permission "servertools.toggleforum":
+            if {servertools.forum} is false:
+                set {servertools.forum} to true
+                send "&3[&bServerTools&3] &3Forum: &aEnabled"
+            else:
+                set {servertools.forum} to false
+                send "&3[&bServerTools&3] &3Forum: &cDisabled"
+        else:
+            send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+
+command /forum:
+    trigger:
+        if {servertools.forum} is true:
+            send "&3[&bServerTools&3] &3Go checkout our forum!"
+            send "&3Link: &b%{forum}%"
+        else:
+            send "&3[&bServerTools&3] &cSorry, we do not have a forum!"
+
+command /st [<text>]:
+    trigger:
+        if player has permission "servertools.st.use":
+            if arg-1 is not set:
+                send "&3&l==========[&bServertools&3&l]=========="
+                send "&r- &3/st reload"
+                send "  &bReloads the plugin."
+                send "&r- &3/st settings"
+                send "  &bShows current plugin-settings."
+            if arg-1 is "reload":
+                if player has permission "servertools.reload":
+                    execute console command "sk reload ServerTools"
+                    send "&3[&bServerTools&3] &3Status: &bThe plugin has been reloaded!"
+                else:
+                    send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+            if arg-1 is "settings":
+                send "&3&l==========[&bServertools&3&l]=========="
+                send "&3Website: &b%{website}%"
+                send "&3Forum: &b%{forum}%"
+
+command /setwarp [<text>]:
+    trigger:
+        if arg-1 is set:
+            if player has permission "servertools.setwarp":
+                if {warp.%arg-1%} is not set:
+                    set {warp.pos.%arg-1%} to location of player
+                    add arg-1 to {servertools.warps::*}
+                    send "&3[&bServerTools&3] &3Warp set!"
+                else:
+                    send "&3[&bServerTools&3] &cThere is already a warp with that name!"
+            else:
+                send "&3[&bServerTools&3] &cSorry, you do not have permission to use this command!"
+        else:
+            send "&3[&bServerTools&3] &cUsage: /setwarp <WarpName>"
+
+command /warps:
+    trigger:
+        send "&3[&bServerTools&3] &3Warps: &b%{servertools.warps::*}%"
+
+command /warp [<text>]:
+    trigger:
+        if arg-1 is set:
+            if player has permission "servertools.warp.%arg-1%":
+                if {warp.pos.%arg-1%} is set:
+                    teleport player to {warp.pos.%arg-1%}
+                    send "&3[&bServerTools&3] &3Teleported to warp: &b%arg-1%"
+                else:
+                    send "&3[&bServerTools&3] &cSorry, this warp doesn't exist!"
+            else:
+                send "&3[&bServerTools&3] &cSorry, you don't have permission to use this warp!"
+        else:
+            send "&3[&bServerTools&3] &3Warps: &b%{servertools.warps::*}%"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
